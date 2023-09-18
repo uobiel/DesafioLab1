@@ -1,4 +1,4 @@
-public class Enderco {
+public class Endereco {
     private String nomeDaRua;
     private String cidade;
     private String estado;
@@ -7,7 +7,7 @@ public class Enderco {
     private String numero;
     private String complemento;
     
-    public Enderco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero,
+    public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero,
             String complemento) {
         this.nomeDaRua = nomeDaRua;
         this.cidade = cidade;

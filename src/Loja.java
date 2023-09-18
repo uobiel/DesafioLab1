@@ -1,17 +1,17 @@
 public class Loja {
     private String nome;
-    private int quantidadeFuncionários;
+    private int quantidadeFuncionarios;
     private double salarioBaseFuncionario;
 
-    public Loja(String nome, int quantidadeFuncionários, double salarioBaseFuncionario) {
+    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario) {
         this.nome = nome;
-        this.quantidadeFuncionários = quantidadeFuncionários;
+        this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = salarioBaseFuncionario;
     }
 
-    public Loja(String nome, int quantidadeFuncionários) {
+    public Loja(String nome, int quantidadeFuncionarios) {
         this.nome = nome;
-        this.quantidadeFuncionários = quantidadeFuncionários;
+        this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = -1;
     }
 
@@ -23,12 +23,12 @@ public class Loja {
         this.nome = nome;
     }
 
-    public int getQuantidadeFuncionários() {
-        return quantidadeFuncionários;
+    public int getQuantidadeFuncionarios() {
+        return quantidadeFuncionarios;
     }
 
-    public void setQuantidadeFuncionários(int quantidadeFuncionários) {
-        this.quantidadeFuncionários = quantidadeFuncionários;
+    public void setQuantidadeFuncionarios(int quantidadeFuncionarios) {
+        this.quantidadeFuncionarios = quantidadeFuncionarios;
     }
 
     public double getSalarioBaseFuncionario() {
@@ -40,7 +40,7 @@ public class Loja {
     }
 
     public String toString() {
-        return "Nome da loja: " + this.nome + " | Quantidade de funcionários: " + this.quantidadeFuncionários
+        return "Nome da loja: " + this.nome + " | Quantidade de funcionários: " + this.quantidadeFuncionarios
                 + " | Salário base dos funcionários: " + salarioBaseFuncionario;
     }
 
@@ -50,7 +50,7 @@ public class Loja {
             return -1;
         }
 
-        double gastoSalarios = salarioBaseFuncionario * quantidadeFuncionários;
+        double gastoSalarios = salarioBaseFuncionario * quantidadeFuncionarios;
 
         return gastoSalarios;
 
@@ -58,15 +58,15 @@ public class Loja {
 
     public char tamanhoDaLoja() {
 
-        if (this.quantidadeFuncionários < 10) {
+        if (this.quantidadeFuncionarios < 10) {
             return 'P';
         }
 
-        else if (this.quantidadeFuncionários >= 10 && this.quantidadeFuncionários <= 30) {
+        else if (this.quantidadeFuncionarios >= 10 && this.quantidadeFuncionarios <= 30) {
             return 'M';
         }
 
-        else if (this.quantidadeFuncionários >= 31) {
+        else if (this.quantidadeFuncionarios >= 31) {
             return 'G';
         }
 
