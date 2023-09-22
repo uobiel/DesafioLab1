@@ -39,8 +39,8 @@ public class Data {
 
         if (validarData(dia, mes, ano)) {
             this.mes = mes;
-        } 
-        
+        }
+
         else {
             this.mes = 1;
         }
@@ -55,25 +55,22 @@ public class Data {
 
         if (validarData(dia, mes, ano)) {
             this.ano = ano;
-        } 
-        
+        }
+
         else {
             this.ano = 2000;
         }
 
     }
 
-
     public String toString() {
         return dia + "/" + mes + "/" + ano;
     }
-
 
     public boolean verificaAnoBissexto() {
         return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
     }
 
-    
     private boolean validarData(int dia, int mes, int ano) {
         if (ano < 1 || mes < 1 || mes > 12 || dia < 1 || dia > diasNoMes(mes, ano)) {
             return false;
@@ -81,9 +78,8 @@ public class Data {
         return true;
     }
 
-
     private int diasNoMes(int mes, int ano) {
-        int[] diasPorMes = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int[] diasPorMes = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         if (mes == 2 && verificaAnoBissexto()) {
             return 29;
         }

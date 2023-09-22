@@ -2,17 +2,39 @@ public class Loja {
     private String nome;
     private int quantidadeFuncionarios;
     private double salarioBaseFuncionario;
+    private Endereco endereco;
+    private Data dataFundacao;
 
-    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario) {
+    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = salarioBaseFuncionario;
+        this.dataFundacao = dataFundacao;
+        this.endereco = endereco;
     }
 
-    public Loja(String nome, int quantidadeFuncionarios) {
+    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = -1;
+        this.dataFundacao = dataFundacao;
+        this.endereco = endereco;
+    }
+
+    public Data getDataFundacao(){
+        return dataFundacao;
+    }
+
+    public void setDataFundacao(Data dataFundacao){
+        this.dataFundacao = dataFundacao;
+    }
+
+    public Endereco getEndereco(){
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco){
+        this.endereco = endereco;
     }
 
     public String getNome() {
