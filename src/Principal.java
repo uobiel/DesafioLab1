@@ -2,9 +2,6 @@ public class Principal {
     public static void main(String[] args){
 
         while(true){
-            
-            Loja loja1 = null;
-            Produto produto1 = null;
 
             int quest = Teclado.leInt("\n[1] Criar uma loja\n[2] Criar um produto\n[3] Sair\n");
 
@@ -16,32 +13,24 @@ public class Principal {
 
                 Loja loja = new Loja(Teclado.leString("\nDigite o nome da loja: "), Teclado.leInt("Digite a quantidade de funcionário da loja: "), Teclado.leDouble("Digite o salário base dos funcionários: "), endereco, data );
 
-                loja1 = loja;
-
             }
 
             else if(quest == 2){
                 Data data = new Data(Teclado.leInt("\nData de validade do produto: \n"), Teclado.leInt("\nMês de validade do produto: \n"), Teclado.leInt("\nAno de validade do produto: \n"));
 
-                Produto produto = new Produto(Teclado.leString("Nome do produto: "), Teclado.leDouble("Preço do produto"), data);
+                Produto produto = new Produto(Teclado.leString("\nNome do produto: \n"), Teclado.leDouble("\nPreço do produto: \n"), data);
 
-                produto1 = produto;
+                 if(produto.estaVencido(new Data(20, 10, 2023)) == true){
+                    System.out.println("\nPRODUTO VENCIDO");
+                }
 
+                else{
+                    System.out.println("\nPRODUTO NÃO VENCIDO");
+                }
             }
 
             else if(quest == 3){
                 break;
-            }
-
-        
-            if(loja1 != null && produto1 != null){
-                if(produto1.estaVencido(new Data(20, 10, 2023)) == true){
-                    System.out.println("Produto vencido. ");
-                }
-
-                else{
-                    System.out.println("PRODUTO NÃO VENCIDO");
-                }
             }
 
 
