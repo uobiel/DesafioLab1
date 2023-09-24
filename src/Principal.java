@@ -33,6 +33,10 @@ public class Principal {
                 break;
             }
 
+            else{
+                System.out.println("\nOpção inválida\n");
+            }
+
 
         }
         
