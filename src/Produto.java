@@ -39,15 +39,15 @@ public class Produto {
 
     public boolean estaVencido(Data data){
         
-        if(dataValidade.getAno() < data.getAno()){
+        if(dataValidade.getAno() > data.getAno()){
             return false;
         }
 
-        else if(dataValidade.getAno() == data.getAno() && dataValidade.getMes() < data.getMes()){
+        else if(dataValidade.getAno() == data.getAno() && dataValidade.getMes() > data.getMes()){
             return false;
         }
 
-        else if(dataValidade.getAno() == data.getAno() && dataValidade.getMes() == data.getMes() && dataValidade.getDia() < data.getDia()){
+        else if(dataValidade.getAno() == data.getAno() && dataValidade.getMes() == data.getMes() && dataValidade.getDia() >= data.getDia()){
             return false;
         }
 
