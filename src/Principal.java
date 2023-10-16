@@ -16,7 +16,7 @@ public class Principal {
 
                 Data data = new Data(Teclado.leInt("\nDia da fundação da loja: \n"), Teclado.leInt("\nMês da fundação da loja: \n"), Teclado.leInt("\nAno da funcação da loja: \n"));
 
-                Loja loja = new Loja(Teclado.leString("\nDigite o nome da loja: \n"), Teclado.leInt("\nDigite a quantidade de funcionário da loja: \n"), Teclado.leDouble("\nDigite o salário base dos funcionários: \n"), endereco, data );
+                Loja loja = new Loja(Teclado.leString("\nDigite o nome da loja: \n"), Teclado.leInt("\nDigite a quantidade de funcionário da loja: \n"), Teclado.leDouble("\nDigite o salário base dos funcionários: \n"), endereco, data, Teclado.leInt("Qual o máximo de produtos da loja? "));
 
             }
 
