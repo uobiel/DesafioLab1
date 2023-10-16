@@ -34,7 +34,9 @@ public class Produto {
     }
 
     public String toString() {
-        return "Nome do produto: " + this.nome + " | Preço do produto: R$" + this.preco;
+        return "Nome do produto: " + this.nome + 
+        " | Preço do produto: R$" + this.preco +
+        " | Data de validade: " + this.dataValidade;
     }
 
     public boolean estaVencido(Data data){
