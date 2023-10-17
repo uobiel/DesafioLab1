@@ -9,11 +9,11 @@ public class Produto {
         this.dataValidade = dataValidade;
     }
 
-    public Data getDataValidade(){
+    public Data getDataValidade() {
         return dataValidade;
     }
 
-    public void setDataValidade(Data dataValidade){
+    public void setDataValidade(Data dataValidade) {
         this.dataValidade = dataValidade;
     }
 
@@ -34,22 +34,23 @@ public class Produto {
     }
 
     public String toString() {
-        return "Nome do produto: " + this.nome + 
-        " | Preço do produto: R$" + this.preco +
-        " | Data de validade: " + this.dataValidade;
+        return "Nome do produto: " + this.nome +
+                " | Preço do produto: R$" + this.preco +
+                " | Data de validade: " + this.dataValidade;
     }
 
-    public boolean estaVencido(Data data){
-        
-        if(dataValidade.getAno() > data.getAno()){
+    public boolean estaVencido(Data data) {
+
+        if (dataValidade.getAno() > data.getAno()) {
             return false;
         }
 
-        else if(dataValidade.getAno() == data.getAno() && dataValidade.getMes() > data.getMes()){
+        else if (dataValidade.getAno() == data.getAno() && dataValidade.getMes() > data.getMes()) {
             return false;
         }
 
-        else if(dataValidade.getAno() == data.getAno() && dataValidade.getMes() == data.getMes() && dataValidade.getDia() >= data.getDia()){
+        else if (dataValidade.getAno() == data.getAno() && dataValidade.getMes() == data.getMes()
+                && dataValidade.getDia() >= data.getDia()) {
             return false;
         }
 

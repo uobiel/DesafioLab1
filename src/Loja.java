@@ -6,7 +6,8 @@ public class Loja {
     private Data dataFundacao;
     private Produto[] estoqueProdutos;
 
-    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, int maxProdutos) {
+    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
+            Data dataFundacao, int maxProdutos) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = salarioBaseFuncionario;
@@ -24,19 +25,19 @@ public class Loja {
         this.estoqueProdutos = new Produto[maxProdutos];
     }
 
-    public Data getDataFundacao(){
+    public Data getDataFundacao() {
         return dataFundacao;
     }
 
-    public void setDataFundacao(Data dataFundacao){
+    public void setDataFundacao(Data dataFundacao) {
         this.dataFundacao = dataFundacao;
     }
 
-    public Endereco getEndereco(){
+    public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco endereco){
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
@@ -73,12 +74,12 @@ public class Loja {
     }
 
     public String toString() {
-        return "Nome da loja: " + this.nome + 
-        " | Quantidade de funcionários: " + this.quantidadeFuncionarios + 
-        " | Salário base dos funcionários: " + salarioBaseFuncionario + 
-        " | Endereço da loja: " + this.endereco +
-        " | Data de fundação da loja: " + this.dataFundacao +
-        " | Quantidade máxima de produtos: " + this.estoqueProdutos.length + " Produtos.";
+        return "Nome da loja: " + this.nome +
+                " | Quantidade de funcionários: " + this.quantidadeFuncionarios +
+                " | Salário base dos funcionários: " + salarioBaseFuncionario +
+                " | Endereço da loja: " + this.endereco +
+                " | Data de fundação da loja: " + this.dataFundacao +
+                " | Quantidade máxima de produtos: " + this.estoqueProdutos.length + " Produtos.";
     }
 
     public double gastosComSalario() {
@@ -110,50 +111,50 @@ public class Loja {
         return '0';
     }
 
-
-    public void imprimeProdutos(){
+    public void imprimeProdutos() {
         boolean valida = true;
-        for(int i = 0; i < estoqueProdutos.length ; i++){
-            if(estoqueProdutos[i] != null){
+        for (int i = 0; i < estoqueProdutos.length; i++) {
+            if (estoqueProdutos[i] != null) {
                 System.out.println(estoqueProdutos[i].toString());
                 valida = false;
             }
         }
-        if(valida){
+        if (valida) {
             System.out.println("Estoque de produtos vazio.");
         }
-        
+
     }
 
     public boolean insereProduto(Produto produto) {
         for (int i = 0; i < estoqueProdutos.length; i++) {
-            if (estoqueProdutos[i] == null) { 
+            if (estoqueProdutos[i] == null) {
                 int dia = Teclado.leInt("Dia da validade do produto: ");
                 int mes = Teclado.leInt("Mês da validade do produto: ");
                 int ano = Teclado.leInt("Ano da validade do produto: ");
-    
+
                 Data dataValidade = new Data(dia, mes, ano);
-    
-                estoqueProdutos[i] = new Produto(Teclado.leString("Nome do produto: "), Teclado.leDouble("Preço do produto: "), dataValidade);
-    
-                return true; 
+
+                estoqueProdutos[i] = new Produto(Teclado.leString("Nome do produto: "),
+                        Teclado.leDouble("Preço do produto: "), dataValidade);
+
+                return true;
             }
         }
-    
-        return false; 
+
+        return false;
     }
 
-    public boolean removeProduto(String nomeProduto){
+    public boolean removeProduto(String nomeProduto) {
         boolean valida = true;
-        for(int i = 0; i < estoqueProdutos.length ; i++){
-            if(estoqueProdutos[i] != null && estoqueProdutos[i].getNome().equalsIgnoreCase(nomeProduto)){
+        for (int i = 0; i < estoqueProdutos.length; i++) {
+            if (estoqueProdutos[i] != null && estoqueProdutos[i].getNome().equalsIgnoreCase(nomeProduto)) {
                 estoqueProdutos[i] = null;
                 valida = false;
                 return true;
             }
         }
 
-        if(valida){
+        if (valida) {
             System.out.println("Estoque vazio.");
         }
 

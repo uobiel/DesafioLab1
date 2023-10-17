@@ -3,7 +3,7 @@ public class Shopping {
     private Endereco endereco;
     private Loja[] lojas;
 
-    public Shopping(String nome, Endereco endereco, int quantMaxLojas){
+    public Shopping(String nome, Endereco endereco, int quantMaxLojas) {
         this.nome = nome;
         this.endereco = endereco;
         this.lojas = new Loja[quantMaxLojas];
@@ -33,20 +33,20 @@ public class Shopping {
         this.lojas = lojas;
     }
 
-    public String toString(){
+    public String toString() {
         return "Nome do shopping: " + this.nome +
-        "| Endereço do shopping " + this.endereco +
-        "| Capacidade de lojas " + this.lojas.length;
+                "| Endereço do shopping " + this.endereco +
+                "| Capacidade de lojas " + this.lojas.length;
     }
 
     public boolean insereLoja(Loja nomeLoja) {
         for (int i = 0; i < lojas.length; i++) {
             if (lojas[i] == null) {
                 lojas[i] = nomeLoja;
-                return true; 
+                return true;
             }
         }
-    
+
         System.out.println("Capacidade máxima atingida. Não é possível inserir mais lojas.");
         return false;
     }
@@ -58,13 +58,13 @@ public class Shopping {
                 return true;
             }
         }
-    
+
         return false;
     }
 
     public int quantidadeLojasPorTipo(String tipoLoja) {
         int quantidade = 0;
-        
+
         for (Loja loja : lojas) {
             if (loja != null) {
                 if (loja instanceof Cosmetico && tipoLoja.equalsIgnoreCase("Cosmético")) {
@@ -80,7 +80,7 @@ public class Shopping {
                 }
             }
         }
-        
+
         if (quantidade > 0) {
             return quantidade;
         } else {
@@ -91,20 +91,19 @@ public class Shopping {
     public Informatica lojaSeguroMaisCaro() {
         Informatica lojaMaisCara = null;
         double maiorSeguro = -1;
-    
+
         for (Loja loja : lojas) {
             if (loja instanceof Informatica) {
                 Informatica informatica = (Informatica) loja;
-    
+
                 if (informatica.getSeguroEletronicos() > maiorSeguro) {
                     maiorSeguro = informatica.getSeguroEletronicos();
                     lojaMaisCara = informatica;
                 }
             }
         }
-    
+
         return lojaMaisCara;
     }
-    
-    
+
 }
